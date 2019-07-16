@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(
 		urlPatterns = { "/TPRechercherNombre" }, 
 		initParams = { 
-				@WebInitParam(name = "minRandom", value = "50"),
-				@WebInitParam(name = "maxRandom", value = "100") 
+			@WebInitParam(name = "MIN_RANDOM", value = "50"),
+				@WebInitParam(name = "MAX_RANDOM", value = "100") 
 				}
 		)
 public class TPRechercherNombre extends HttpServlet {
@@ -26,8 +26,8 @@ public class TPRechercherNombre extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		this.minRandom = Integer.parseInt(this.getInitParameter("minRandom"));
-		this.maxRandom = Integer.parseInt(this.getInitParameter("maxRandom"));
+		this.minRandom = Integer.parseInt(this.getInitParameter("MIN_RANDOM"));
+		this.maxRandom = Integer.parseInt(this.getInitParameter("MAX_RANDOM"));
 	}
 
 	/**

@@ -22,4 +22,18 @@
     <error-code>500</error-code>
     <location>/modules/modules/Demonstration/erreur500.html</location>
   </error-page>
+  <servlet>
+    <description>Servlet Module 2 Démonstration 8</description>
+    <servlet-name>ServletAvecParametreInitialisationWebXML</servlet-name>
+    <servlet-class>fr.eni.javaee.module2.ServletAvecParametreInitialisationWebXML</servlet-class>
+    <init-param>
+      <description>Un paramètre d'initialisation</description>
+      <param-name>NOM_PARAMETRE</param-name>
+      <param-value>VALEUR_PARAMETRE</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAvecParametreInitialisationWebXML</servlet-name>
+    <url-pattern>/modules/module2/ServletAvecParametreInitialisationWebXML</url-pattern>
+  </servlet-mapping>
 </web-app>
