@@ -9,4 +9,17 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description>Servlet Module 2 Démonstration 1</description>
+    <servlet-name>PremiereServletConfigurationWebXML</servlet-name>
+    <servlet-class>fr.eni.javaee.module2.PremiereServletConfigurationWebXML</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PremiereServletConfigurationWebXML</servlet-name>
+    <url-pattern>/modules/module2/PremiereServletConfigurationWebXML</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/modules/modules/Demonstration/erreur500.html</location>
+  </error-page>
 </web-app>

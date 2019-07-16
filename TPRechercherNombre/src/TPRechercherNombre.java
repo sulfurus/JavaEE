@@ -84,6 +84,7 @@ public class TPRechercherNombre extends HttpServlet {
 			System.err.println("Votre saisie est vide");
 			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 /*			response.sendRedirect("/TPRechercherNombre/Echec.html");*/
+			
 		}
 
 	}
