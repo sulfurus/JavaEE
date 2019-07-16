@@ -75,10 +75,10 @@ public class TPRechercherNombre extends HttpServlet {
 			if (nombreReponse.equals(String.valueOf(nombre))) {
 				System.out.printf("Vous avez proposé : %s , Victoire !!! Le chiffre à trouver est %s\n", nombreReponse,
 						nombre);
-				response.sendRedirect("/TPRechercherNombre/Victoire.html");
+				response.sendRedirect("/TPRechercherNombre/html/Victoire.html");
 			} else {
 				System.out.printf("Vous avez proposé : %s , mais le chiffre à trouver est %s\n", nombreReponse, nombre);
-				response.sendRedirect("/TPRechercherNombre/Echec.html");
+				response.sendRedirect("/TPRechercherNombre/html/Echec.html");
 			}
 		} else {
 			System.err.println("Votre saisie est vide");
