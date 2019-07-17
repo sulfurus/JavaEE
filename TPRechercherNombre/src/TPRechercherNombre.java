@@ -1,6 +1,7 @@
 
 import java.io.IOException;
 import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -11,13 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TPRechercherNombre
  */
-@WebServlet(
-		urlPatterns = { "/TPRechercherNombre" }, 
-		initParams = { 
-			@WebInitParam(name = "MIN_RANDOM", value = "50"),
-				@WebInitParam(name = "MAX_RANDOM", value = "100") 
-				}
-		)
+@WebServlet(urlPatterns = { "/TPRechercherNombre" }, initParams = { @WebInitParam(name = "MIN_RANDOM", value = "50"),
+		@WebInitParam(name = "MAX_RANDOM", value = "100") })
 public class TPRechercherNombre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private int minRandom;
@@ -27,7 +23,8 @@ public class TPRechercherNombre extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		this.minRandom = Integer.parseInt(this.getInitParameter("MIN_RANDOM"));
-		this.maxRandom = Integer.parseInt(this.getInitParameter("MAX_RANDOM"));
+		this.maxRandom =  Integer.parseInt(this.getInitParameter("MAX_RANDOM"));
+
 	}
 
 	/**
@@ -57,7 +54,7 @@ public class TPRechercherNombre extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		setNombre();
-		response.sendRedirect("/TPRechercherNombre/Formulaire.html");
+		response.sendRedirect("/TPRechercherNombre/html/Formulaire.html");
 	}
 
 	/**
@@ -73,18 +70,17 @@ public class TPRechercherNombre extends HttpServlet {
 		}
 		if (nombreReponse != null && !nombreReponse.isEmpty()) {
 			if (nombreReponse.equals(String.valueOf(nombre))) {
-				System.out.printf("Vous avez proposé : %s , Victoire !!! Le chiffre à trouver est %s\n", nombreReponse,
+				System.out.printf("Vous avez proposez : %s , Victoire !!! Le chiffre à trouver est %s\n", nombreReponse,
 						nombre);
 				response.sendRedirect("/TPRechercherNombre/html/Victoire.html");
 			} else {
-				System.out.printf("Vous avez proposé : %s , mais le chiffre à trouver est %s\n", nombreReponse, nombre);
+				System.out.printf("Vous avez proposez : %s , mais le chiffre à trouver est %s\n", nombreReponse, nombre);
 				response.sendRedirect("/TPRechercherNombre/html/Echec.html");
 			}
 		} else {
 			System.err.println("Votre saisie est vide");
 			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-/*			response.sendRedirect("/TPRechercherNombre/Echec.html");*/
-			
+
 		}
 
 	}
