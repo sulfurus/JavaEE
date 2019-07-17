@@ -8,17 +8,11 @@
 </head>
 <body>
 <h1>Choisi entre CHI-FU-MI</h1>
-
-
 	<form action="/TPChifoumi/ServletChifoumi" method="POST">
-		<SELECT name="choix">
-			<OPTION>Pierre
-			<OPTION>Feuille
-			<OPTION>Ciseaux
-		</SELECT>
-		<button type="submit">Valider</button>
-	</FORM>
-
-
+		<input type="submit" value="Pierre" name="choix" >
+		<input type="submit" value="Feuille" name="choix">
+		<input type="submit" value="Ciseaux" name="choix">
+			<input type="submit" value="Erreur" name="choix">
+	</form>
 </body>
 </html>

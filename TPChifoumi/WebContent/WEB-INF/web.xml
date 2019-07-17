@@ -17,4 +17,5 @@
 		<servlet-name>resultatChifoumi</servlet-name>
 		<jsp-file>/WEB-INF/resultat.jsp</jsp-file>
 	</servlet>
+
 </web-app>

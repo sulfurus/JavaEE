@@ -19,6 +19,7 @@ public class ServletChifoumi extends HttpServlet {
 	int nbChoixPrg;
 	String choixPossible[] = { "Pierre", "Ciseaux", "Feuille" };
 
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -31,6 +32,7 @@ public class ServletChifoumi extends HttpServlet {
 		Random random = new Random();
 		nbChoixPrg = random.nextInt(choixPossible.length);
 		System.out.printf("Le choix d l'ordinateur est : %s\n", nbChoixPrg);
+		
 	}
 
 	/**
@@ -64,13 +66,24 @@ public class ServletChifoumi extends HttpServlet {
 		} else {
 			if (choixPossible[(nbChoixPrg == 2) ? 0 : nbChoixPrg + 1].equals(choixJoueur)) {
 				reponse = "Tu à perdu";
-			}
-			if (choixPossible[(nbChoixPrg == 0) ? 2 : nbChoixPrg - 1].equals(choixJoueur)) {
+			}else 	if (choixPossible[(nbChoixPrg == 0) ? 2 : nbChoixPrg - 1].equals(choixJoueur)) {
 				reponse = "Tu à gagné";
 			}
+			else
+			{
+				reponse= null;
+			}
 		}
+		if(reponse ==null)
+		{
+			request.setAttribute("codeRetour", "1");
+			reponse = "Erreur de l'algo de traitement du gagnant";
+		}
+		else
+		{
+			request.setAttribute("codeRetour", "0");	
 		reponse += ", tu à choisi " + choixJoueur + ", l'ordinateur à choisi " + choixPossible[nbChoixPrg];
-
+		}
 		System.out.println(reponse);
 		request.setAttribute("resp", reponse);
 		request.setAttribute("joueur", choixJoueur);
