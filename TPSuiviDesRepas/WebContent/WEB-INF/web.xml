@@ -17,4 +17,20 @@
     <servlet-name>AjoutRepas</servlet-name>
     <url-pattern>/AjoutRepasJSP</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>SuiviDesRepas</servlet-name>
+    <jsp-file>/WEB-INF/jsp/SuiviDesRepas.jsp</jsp-file>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>SuiviDesRepas</servlet-name>
+    <url-pattern>/SuiviDesRepasJSP</url-pattern>
+  </servlet-mapping>
+      <servlet>
+    <servlet-name>VisuRepas</servlet-name>
+    <jsp-file>/WEB-INF/jsp/VisuRepas.jsp</jsp-file>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>VisuRepas</servlet-name>
+    <url-pattern>/VisuRepasJSP</url-pattern>
+  </servlet-mapping>
 </web-app>

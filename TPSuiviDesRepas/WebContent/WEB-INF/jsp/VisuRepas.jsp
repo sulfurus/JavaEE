@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-    <title>Historique</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ajout d'un repas</title>
     <!-- Bootstrap core CSS -->
-    <link href="./style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body class="container">
     <div class="row">
         <div class="col-sm">
-            <h1 class="text-center col-sm">Historique</h1>
+            <p class="text-center col-sm">Historique</p>
         </div>
     </div>
     <div class="col-sm">
