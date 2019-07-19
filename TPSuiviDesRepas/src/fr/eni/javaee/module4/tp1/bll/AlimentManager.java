@@ -16,10 +16,12 @@ public class AlimentManager {
 	}
 
 	public void insert(Aliment aliment) throws BusinessException {
-		int idAliment = alimentDAO.getAlimentByLibelle(aliment.getLibelle());
-		if (idAliment < 0) {
+/*		int idAliment = -1;
+		idAliment = alimentDAO.getAlimentByLibelle(aliment.getLibelle());
+*/
+		//if (idAliment < 0) {
 			alimentDAO.insertAliment(aliment);
-		}
+		//}
 	}
 
 	public List<Aliment> selectByIdRepas(int idRepas) throws BusinessException {

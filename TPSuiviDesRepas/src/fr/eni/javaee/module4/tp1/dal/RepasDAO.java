@@ -14,7 +14,7 @@ public interface RepasDAO {
 
 	public List<Repas> selectAll() throws BusinessException;
 
-	public int getId();
+
 
 	public List<Aliment> getListeAliment() throws BusinessException;
 	

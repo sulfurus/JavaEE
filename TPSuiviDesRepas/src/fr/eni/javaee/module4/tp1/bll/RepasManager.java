@@ -1,5 +1,6 @@
 package fr.eni.javaee.module4.tp1.bll;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.javaee.module4.tp1.BusinessException;
@@ -19,9 +20,10 @@ public class RepasManager {
 		this.repasDAO = DAOFactory.getRepasDAO();
 	}
 
-	public void ajouterRepas(Repas repas) throws BusinessException {
+	public int ajouterRepas(Repas repas) throws BusinessException {
 		repasDAO.insert(repas);
-		addListeAliment(repas.getId_repas(), repasDAO.getListeAliment());
+	
+		return repas.getId_repas();
 	}
 
 	public void addListeAliment(int idRepas, List<Aliment> listeAliment) throws BusinessException {
@@ -32,15 +34,14 @@ public class RepasManager {
 	}
 
 	public List<Aliment> getListeAlimentByIdRepas(int idRepas) throws BusinessException {
-		List<Aliment> listeAliment = null;
+		List<Aliment> listeAliment = new ArrayList<Aliment>();
 		listeAliment = alimentDAO.getListeAlimentByIdRepas(idRepas);
 		return listeAliment;
 	}
 
 	public List<Repas> getListeRepas() throws BusinessException {
-		List<Repas> listeRepas = null;
+		List<Repas> listeRepas = new ArrayList<Repas>();
 		listeRepas = repasDAO.selectAll();
 		return listeRepas;
 	}
-
 }
